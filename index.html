@@ -165,8 +165,11 @@ Prior to that, I graduated with a PhD from <a href="https://en-exact-sciences.ta
 <br>
 <br>
 
-</br\></p><h4>Publications and Papers (<a href="http://www.informatik.uni-trier.de/~ley/pers/hd/z/Zamir:Or">dblp</a>, <a href="http://scholar.google.com/citations?user=xiyhJrwAAAAJ">scholar</a>)</h4>
-<p>
+</br\></p>
+
+<h4>Publications and Papers (<a href="http://www.informatik.uni-trier.de/~ley/pers/hd/z/Zamir:Or">dblp</a>, <a href="http://scholar.google.com/citations?user=xiyhJrwAAAAJ">scholar</a>) 
+<img id="pubs_bttn" src="images/down_arrow.png" size="30px" alt="Show/Hide"></h4>
+<div id="pubs_div" style="display: none;">
 
 <a href="https://www.tau.ac.il/~nogaa/">N. Alon</a>, 
 <a href="https://www.math.ias.edu/~matija.bucic/">M. Bucic</a>, 
@@ -344,11 +347,29 @@ O. Zamir,
 <a href="./pub/FindMin_OrZamir.pdf"><b>The amortized cost of finding the minimum</b></a>, 
 SODA '15. 
 <b>M.Sc Thesis</b><br>
-</p>
+</div>
 </div>
 
 <br>
 </div>
+<script>
+        const bttn = document.getElementById("pubs_bttn");
+        const div = document.getElementById("pubs_div");
+
+        let isOpen = false;
+
+        bttn.addEventListener("click", function () {
+            if (isOpen) {
+                div.style.display = "none";
+                bttn.src = "images/down_arrow.png";
+                isOpen = false;
+            } else {
+                div.style.display = "block";
+                bttn.src = "images/up_arrow.png";
+                isOpen = true;
+            }
+        });
+</script>
 
 <h4>Awards</h4>
 2023:&nbsp;&nbsp;The Blavatnik Grant.
