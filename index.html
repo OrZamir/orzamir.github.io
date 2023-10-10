@@ -387,7 +387,8 @@ SODA '15.
 2013:&nbsp;&nbsp;<b>Rector's award</b> for excellence, Tel Aviv University.
 </div>
 <br><br>
-<h4>CV</h4>
+<h4><span id="cv_click"><img id="cv_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> CV</span></h4>
+<div id="cv_div">
 2023-:&nbsp;&nbsp;<b>Assistant Professor / ``Senior Lecturer"</b>, School of Computer Science, Tel Aviv University.
 <br><br>
 2022-2023:&nbsp;&nbsp;<b>Associate Research Scholar</b>, Department of Computer Science, Princeton University.
@@ -413,7 +414,7 @@ October 2018 - January 2019:&nbsp;&nbsp;<a href="https://barc.ku.dk/news/or-zami
 2012:&nbsp;&nbsp;Joined the Computer Science dept. excellence program, Tel Aviv University.
 <br><br>
 2012-2015:&nbsp;&nbsp;<b>Computer Science and Mathematics B.Sc</b>, Tel Aviv University. <b>Summa Cum Laude</b> (<b>GPA:</b> Mathematics <i>100.00</i>, Computer Science <i>99.46</i> )
-<br>
+</div>
 <!--
 <br/>
 <h4>Talks and Seminars</h4>
@@ -445,8 +446,8 @@ October 2018 - January 2019:&nbsp;&nbsp;<a href="https://barc.ku.dk/news/or-zami
 -->
 
 <br><br>
-<h4>Teaching</h4>
-<p>
+<h4><span id="teach_click"><img id="teach_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Teaching</span></h4>
+<div id="teach_div">
 2020:&nbsp;&nbsp; <b>Rector's award</b> for excellence in teaching, Tel Aviv University.
 <br><br>
 2019/20 Spring Semester:&nbsp;&nbsp; Lecturer, "Data Structues", School of Computer Science, Tel Aviv University.
@@ -454,10 +455,10 @@ October 2018 - January 2019:&nbsp;&nbsp;<a href="https://barc.ku.dk/news/or-zami
 2019/20 Fall Semester:&nbsp;&nbsp; Teaching Assistant, "Data Structues", School of Computer Science, Tel Aviv University.
 <br>
 
-</p>
+</div>
 
 <script>
-    const elementNames = ["pubs", "awards"];
+    const elementNames = ["pubs", "awards", "cv", "teach"];
 	
     elementNames.forEach(elementName => {
         const clck = document.getElementById(`${elementName}_click`);
