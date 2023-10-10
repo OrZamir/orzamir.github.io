@@ -167,8 +167,9 @@ Prior to that, I graduated with a PhD from <a href="https://en-exact-sciences.ta
 
 </br\></p>
 
-<h4>Publications and Papers (<a href="http://www.informatik.uni-trier.de/~ley/pers/hd/z/Zamir:Or">dblp</a>, <a href="http://scholar.google.com/citations?user=xiyhJrwAAAAJ">scholar</a>) 
-<img id="pubs_bttn" src="images/down_arrow.png" size="15px" alt="Show/Hide"></h4>
+<h4>
+<div id="pubs_click"><img id="pubs_bttn" src="images/down_arrow.png" height="20px" alt="Show/Hide"> Publications and Papers</div> 
+	(<a href="http://www.informatik.uni-trier.de/~ley/pers/hd/z/Zamir:Or">dblp</a>, <a href="http://scholar.google.com/citations?user=xiyhJrwAAAAJ">scholar</a>)</h4>
 <div id="pubs_div" style="display: none;">
 
 <a href="https://www.tau.ac.il/~nogaa/">N. Alon</a>, 
@@ -353,12 +354,13 @@ SODA '15.
 <br>
 </div>
 <script>
+	const clck = document.getElementById("pubs_click");
         const bttn = document.getElementById("pubs_bttn");
         const div = document.getElementById("pubs_div");
 
         let isOpen = false;
 
-        bttn.addEventListener("click", function () {
+        clck.addEventListener("click", function () {
             if (isOpen) {
                 div.style.display = "none";
                 bttn.src = "images/down_arrow.png";
