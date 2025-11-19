@@ -88,15 +88,45 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 text-align: justify;
 }
 
-.image {
-  /* position: absolute; */
-  top: 0;
-  right: 0;
-  width: 330px;
-  margin-left: 10px;
-  height: auto;
-  float: right; /* float the image to the right */
+/* --- NEW PHOTO FRAME STYLES --- */
+.photo-frame {
+    /* Frame Logic */
+    background-color: #fdfdfd; /* Slightly off-white paper look */
+    padding: 12px 12px 25px 12px; /* Larger bottom padding for polaroid look */
+    box-shadow: 2px 3px 12px rgba(0,0,0,0.25); /* The drop shadow */
+    transform: rotate(2deg); /* The tilt */
+    
+    /* Positioning */
+    position: relative;
+    float: right;
+    width: 300px; /* Matches previous image width approx */
+    margin-left: 30px;
+    margin-bottom: 20px;
+    z-index: 10;
 }
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #eee; /* Subtle inner border */
+}
+
+/* The Sticky Tape Effect */
+.tape {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    width: 90px;
+    height: 28px;
+    background-color: rgba(255, 255, 230, 0.55); /* Translucent yellow tape */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transform: translateX(-50%) rotate(-3deg); /* Offset rotation from frame */
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-right: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(1px); /* Optional: Makes it look more like tape */
+}
+/* ------------------------------ */
 
 .elevator {
     text-align: center;
@@ -170,46 +200,6 @@ text-align: justify;
         display: inline-block;
     }
 }
-
-/* --- NEW PHOTO FRAME STYLES --- */
-.photo-frame {
-    /* Frame Logic */
-    background-color: #fdfdfd; /* Slightly off-white paper look */
-    padding: 12px 12px 25px 12px; /* Larger bottom padding for polaroid look */
-    box-shadow: 2px 3px 12px rgba(0,0,0,0.25); /* The drop shadow */
-    transform: rotate(2deg); /* The tilt */
-    
-    /* Positioning */
-    position: relative;
-    float: right;
-    width: 300px; /* Matches previous image width approx */
-    margin-left: 30px;
-    margin-bottom: 20px;
-    z-index: 10;
-}
-
-.photo-frame img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 1px solid #eee; /* Subtle inner border */
-}
-
-/* The Sticky Tape Effect */
-.tape {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    width: 90px;
-    height: 28px;
-    background-color: rgba(255, 255, 230, 0.55); /* Translucent yellow tape */
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-    transform: translateX(-50%) rotate(-3deg); /* Offset rotation from frame */
-    border-left: 1px solid rgba(255,255,255,0.3);
-    border-right: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(1px); /* Optional: Makes it look more like tape */
-}
-/* ------------------------------ */
 </style>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="js/elevator.js"></script>
 		
@@ -240,6 +230,7 @@ text-align: justify;
 
 	<div class="content_box_top"></div>
     	<div class="content_box"><div class="container">
+
 <!-- NEW PHOTO STRUCTURE -->
 <div class="photo-frame">
     <div class="tape"></div>
