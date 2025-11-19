@@ -1,0 +1,623 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!-- 1. Viewport Tag: Crucial for mobile scaling -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Or Zamir, School of Computer Science, Tel Aviv University.">
+		<meta name="keywords" content="Or Zamir, Tel Aviv University, TAU, IAS, Princeton, Tel Aviv University, Algorithms, Algorithm, Math, Computer Science, Israel, TAU, Zamir, Data Structures">
+		<meta name="author" content="Or Zamir">
+		<meta name="robots" content="index, follow">
+		<meta name="revisit-after" content="1 week">
+	<link rel="canonical" href="https://zamir.prof/" />
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+		<title>Or Zamir</title>
+		<style type="text/css">
+	body {
+	margin: 0;
+	padding: 5px 0 0 0;
+	color: #666;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12.8px;
+	line-height: 1.5em; 
+	background-color: #bdbdbd;
+	background-image: url('./images/desk.jpg');
+	background-repeat: repeat;
+	}
+	
+p { margin: 0 0 10px 0; padding: 0; }
+td { 	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 20px; }
+	
+h1, h2, h3, h4, h5, h6 { 
+	color: #333; 
+	font-weight: normal;  
+}
+
+h1 { 
+	font-size: 34px; 
+	margin: 0 0 20px; 
+	padding: 5px 0; 
+}
+
+h2 { 
+	font-size: 20px; 
+	margin: 0 0 20px; 
+	padding: 5px 0 10px 0; 
+	font-weight: 400; 
+	background: url(./images/hr_divider.png) bottom repeat-x; 
+}
+
+h3 { font-size: 20px; margin: 0 0 15px; padding: 0; }
+h4 { font-size: 18px; margin: 0 0 15px; padding: 0; }
+h5 { font-size: 16px; margin: 0 0 10px; padding: 0;  }
+h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
+	
+.content_box_top { 
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width: 1000px; 
+	height: 10px; 
+	background: url(./images/content_top.png) no-repeat; 
+}
+
+.content_box_bottom { 
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width: 1000px; 
+	height: 28px; 
+	background: url(./images/content_bottom.png) no-repeat; 
+}
+
+.content_box {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	clear: both;
+	width: 900px;
+	padding: 30px 50px 30px;
+	background: url(./images/content_middle.png) repeat-y;
+}
+
+.container {
+  position: relative; margin-right: 10px;
+}
+
+.inner_container {
+text-align: justify;
+}
+
+.image {
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  width: 330px;
+  margin-left: 10px;
+  height: auto;
+  float: right; /* float the image to the right */
+}
+
+.elevator {
+    text-align: center;
+    cursor: pointer;
+    width: 140px;
+    margin: auto;
+}
+
+.elevator:hover {
+    opacity: 0.7;
+}
+
+.elevator svg {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+/* 2. Responsive Styles: Only apply when screen is smaller than 1020px */
+@media screen and (max-width: 1020px) {
+    
+    /* Make the main container flexible */
+    .content_box_top, 
+    .content_box_bottom {
+        width: 96%; /* Use percentage width */
+        background-size: 100% 100%; /* Force background image to scale */
+    }
+
+    .content_box {
+        width: 96%;
+        box-sizing: border-box; /* Ensures padding is included in width calculation */
+        padding: 20px; /* Slightly reduce padding on mobile */
+        background-size: 100% auto; /* Scale background pattern */
+    }
+
+    /* Mobile Layout for Image */
+    .image {
+        float: none; /* Disable floating layout */
+        display: block;
+        margin: 0 auto 20px auto; /* Center image horizontally */
+        max-width: 80%; /* Prevent it from being too wide */
+        width: auto; /* Allow height to adjust automatically */
+    }
+
+    /* Text adjustments for readability */
+    body {
+        font-size: 14px; /* Slightly larger base text */
+        padding: 0;
+    }
+
+    .container {
+        margin-right: 0;
+    }
+    
+    h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    /* Ensure links and interactive elements are easy to tap */
+    h4 span {
+        padding: 5px 0;
+        display: inline-block;
+    }
+}
+</style>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="js/elevator.js"></script>
+		
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3N9B6YR6V0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3N9B6YR6V0');
+</script>
+		
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78012919-1', 'auto');
+  ga('send', 'pageview');
+
+</script>	
+
+	</head>
+	
+	<body>
+
+	<div class="content_box_top"></div>
+    	<div class="content_box"><div class="container">
+<div><img src="./images/me.png" class="image" alt="Or Zamir"></div>
+<div class="inner_container">
+			<h1>Or Zamir</h1>
+			
+			<h2><a href="https://en-exact-sciences.tau.ac.il/computer/CSResearchers">Blavatnik School of Computer Science</a>, Tel Aviv University.</h2>
+
+<p></p>
+<br>
+
+<h4>About Me</h4>
+<p>
+I am an Assistant Professor ("Senior Lecturer") in the Blavatnik School of Computer Science at <a href="https://en-exact-sciences.tau.ac.il/computer/CSResearchers">Tel Aviv University</a>.
+My fields of interest revolve around algorithms, data structures, combinatorics and graph theory.
+<br>
+Before starting my current position, I was a member in the school of Math at the <a href="https://www.ias.edu/scholars/or-zamir">Institute for Advanced Study</a> and an associate research scholar in the computer science deaprtment at <a href="https://www.princeton.edu/">Princeton University</a>.
+Prior to that, I graduated with a PhD from <a href="https://en-exact-sciences.tau.ac.il/computer">Tel Aviv University</a> where I was honored to have <a href="http://www.cs.tau.ac.il/~haimk/">Haim Kaplan</a> and <a href="http://www.math.tau.ac.il/~zwick/">Uri Zwick</a> as my advisors.&nbsp;
+
+<br>
+<br>
+
+</br\></p>
+
+<h4>
+<span id="pubs_click" style="cursor: pointer;"><img id="pubs_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Publications and Papers</span> 
+	(<a href="https://dblp.org/pid/157/6049.html">dblp</a>, <a href="http://scholar.google.com/citations?user=xiyhJrwAAAAJ">scholar</a>)</h4>
+<div id="pubs_div" style="display: none;">
+
+<a href="http://people.csail.mit.edu/vinodv/">V. Vaikuntanathan</a>,
+O. Zamir, 
+<a href="https://arxiv.org/abs/2502.13065"><b>Improving Algorithmic Efficiency using Cryptography</b></a>, 
+2025.<br>
+
+<br>
+	
+<a href="https://www.cs.bgu.ac.il/~klim/">K. Efremenko</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2411.04803"><b>Unbounded Error Correcting Codes</b></a>, 
+2025.<br>
+
+<br>
+	
+<a href="https://mbraverm.princeton.edu/">M. Braverman</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2411.02148"><b>Optimality of Frequency Moment Estimation</b></a> <a href="https://www.youtube.com/watch?v=KGhCFce8BS8"><img src="images/video.png" height="20px"></a>, 
+STOC '25.<br>
+
+<br>
+	
+<a href="https://www.tau.ac.il/~nogaa/">N. Alon</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2403.16589"><b>Sumsets in the Hypercube</b></a>, 
+SIAM Journal on Discrete Mathematics, 2024.<br>
+
+<br>
+
+O. Zamir, 
+<a href="https://arxiv.org/abs/2401.10360"><b>Undetectable Steganography for Language Models</b></a> <a href="https://github.com/OrZamir/steg"><img src="images/github-logo.png" height="20px"></a>, 
+Transactions on Machine Learning Research, 2024.<br>
+
+<br>
+	
+<a href="https://www.cs.columbia.edu/~xichen/Welcome.html">X. Chen</a>, 
+<a href="https://www.cs.columbia.edu/~nadimpalli/">S. Nadimpalli</a>,
+<a href="https://twrand.github.io/">T. Randolph</a>, 
+<a href="https://www.cs.columbia.edu/~rocco/">R. A. Servedio</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2401.07242"><b>Testing Sumsets is Hard</b></a>, 
+2023.<br>
+
+<br>
+
+<a href="https://www.tau.ac.il/~nogaa/">N. Alon</a>, 
+<a href="https://www.math.ias.edu/~matija.bucic/">M. Bucic</a>, 
+<a href="https://math.mit.edu/~lsauerma/">L. Sauermann</a>, 
+<a href="https://math.mit.edu/directory/profile.html?pid=2452">D. Zakharov</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2309.04460"><b>Essentially tight bounds for rainbow cycles in proper edge-colourings</b></a>, 
+Proceedings of the London Mathematical Society, 2024.<br>
+
+<br>
+
+
+<a href="https://cs.au.dk/~larsen/">K. G. Larsen</a>, 
+<a href="https://rasmuspagh.net/">R. Pagh</a>, 
+<a href="https://www.cs.toronto.edu/~toni/">T. Pitassi</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2308.16042"><b>Optimal Non-Adaptive Cell Probe Dictionaries and Hashing</b></a>, 
+ICALP '24.<br>
+
+<br>
+
+
+<a href="https://www.cs.columbia.edu/~mchrist/">M. Christ</a>, 
+<a href="https://people.eecs.berkeley.edu/~gunn/">S. Gunn</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2306.09194"><b>Undetectable Watermarks for Language Models</b></a>, 
+COLT '24<br>
+
+<br>
+
+O. Zamir, 
+<a href="https://drops.dagstuhl.de/opus/volltexte/2023/18159/"><b>The Wrong Direction of Jensen’s Inequality Is Algorithmically Right</b></a>, 
+ICALP '23.<br>
+
+<br>	
+	
+O. Zamir, 
+<a href="https://arxiv.org/abs/2211.11737"><b>Algorithmic Applications of Hypergraph and Partition Containers</b></a> <a href="https://www.youtube.com/watch?v=8yhxNb_JC_M"><img src="images/video.png" height="20px"></a>, 
+STOC '23.<br>
+
+<br>	
+	
+<a href="https://simons.berkeley.edu/people/shafi-goldwasser">S. Goldwasser</a>,
+<a href="https://cs.stanford.edu/~mpkim/">M. P. Kim</a>, 
+<a href="http://people.csail.mit.edu/vinodv/">V. Vaikuntanathan</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2204.06974"><b>Planting Undetectable Backdoors in Machine Learning Models</b></a> <a href="https://www.quantamagazine.org/cryptographers-show-how-to-hide-invisible-backdoors-in-ai-20230302/"><img src="images/quanta.png" height="20px"></a>, 
+FOCS '22.<br>
+
+<br>
+
+<a href="https://sites.google.com/site/amirabboud/">A. Abboud</a>,
+<a href="https://people.mpi-inf.mpg.de/~kbringma/">K. Bringmann</a>, 
+<a href="https://simons.berkeley.edu/people/seri-khoury">S. Khoury</a>, 
+O. Zamir, 
+<a href="https://arxiv.org/abs/2204.10465"><b>Hardness of Approximation in P via Short Cycle Removal: Cycle Detection, Distance Oracles, and Beyond</b></a> <a href="https://www.youtube.com/watch?v=k1qZR9LGpkE"><img src="images/video.png" height="20px"></a>, 
+STOC '22.<br>
+
+<br>
+
+O. Zamir, 
+<a href="https://arxiv.org/abs/2110.03122"><b>Faster algorithm for Unique (k,2)-CSP</b></a>, 
+ESA '22.<br>
+
+<br>
+
+<a href="https://www.cs.princeton.edu/people/profile/ret">Robert E. Tarjan</a>, 
+<a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>,   
+O. Zamir, 
+<a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
+<a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611977073.76"><b>Simulating a stack using queues</b></a>, 
+SODA '22.<br>
+
+<br>
+
+<a href="https://mbraverm.princeton.edu/">M. Braverman</a>, 
+<a href="https://sites.google.com/view/sumegha-garg/home">S. Garg</a>,   
+O. Zamir, 
+<a href="https://eccc.weizmann.ac.il/report/2021/083/"><b>Tight Space Complexity of the Coin Problem</b></a> <a href="https://www.youtube.com/watch?v=Ly5wbHIIqEg"><img src="images/video.png" height="20px"></a>, 
+FOCS '21.<br>
+
+<br>
+
+<a href="https://sites.google.com/view/shyamnarayanan/home">S. Narayanan</a>, 
+<a href="https://sandeepsilwal.com/">S. Silwal</a>, 
+<a href="https://people.csail.mit.edu/indyk/">P. Indyk</a>, 
+O. Zamir, 
+<a href="http://proceedings.mlr.press/v139/narayanan21b.html"><b>Randomized Dimensionality Reduction for Facility Location and Single-Linkage Clustering</b></a>, 
+ICML '21.<br>
+
+<br>
+
+O. Zamir, 
+<a href="https://arxiv.org/pdf/2007.10790.pdf"><b>Breaking the 2^n barrier for 5-coloring and 6-coloring</b></a> <a href="https://www.youtube.com/watch?v=vhZikAlX5s4"><img src="images/video.png" height="20px"></a>, 
+ICALP '21 (<b>Best Student Paper</b>).<br>
+
+<br>
+
+<a href="http://webhome.cs.uvic.ca/~val/">J. Holm</a>, 
+<a href="https://di.ku.dk/english/staff/?pure=en/persons/42387">V. King</a>, 
+<a href="http://www.diku.dk/~mthorup/">M. Thorup</a>, 
+O. Zamir, 
+<a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
+<a href="https://conferences.computer.org/focs/2019/pdfs/FOCS2019-7pBwCpNH4Mz2L4MJWVl6Xp/5YciFJZv1uWPQreke8IdY6/7EsiyFwTBFtlkBB1AtzN3S.pdf"><b>Random k-out subgraph leaves only (n/k) inter-component edges</b></a> <a href="https://www.youtube.com/watch?v=nmR_Dx564F0"><img src="images/video.png" height="20px"></a>, 
+FOCS '19.<br>
+
+<br>
+
+<a href="http://www.diku.dk/~mthorup/">M. Thorup</a>, 
+O. Zamir, 
+<a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
+<a href="https://drops.dagstuhl.de/opus/volltexte/2019/10671/"><b>Dynamic Ordered Sets with Approximate Queries, Approximate Heaps and Soft Heaps</b></a>, 
+ICALP '19.<br>
+
+<br>
+
+<a href="http://cs.au.dk/~tdh/">T. Dueholm Hansen</a>, 
+<a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>,   
+O. Zamir, 
+<a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
+<a href="https://dl.acm.org/citation.cfm?id=3316359"><b>Faster k-SAT algorithms using biased-PPSZ</b></a>, 
+STOC '19.<br>
+
+<br>
+
+<a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>,   
+O. Zamir, 
+<a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
+<a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611975482.79"><b>A sort of an adversary</b></a>, 
+SODA '19.<br>
+
+<br>
+
+<a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>, 
+<a href="http://www.lkozma.net/">L. Kozma</a>,  
+O. Zamir, 
+<a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
+<a href="https://arxiv.org/pdf/1802.07041.pdf"><b>Selection from heaps, row-sorted matrices and X+Y using soft heaps</b></a>, 
+SOSA '19.<br>
+
+<br>
+
+<a href="http://www.cs.tau.ac.il/~schechik/">S. Chechik</a>, 
+<a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>, 
+<a href="http://www.diku.dk/~mthorup/">M. Thorup</a>, 
+O. Zamir, 
+<a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
+<a href="http://drops.dagstuhl.de/opus/volltexte/2016/5728/pdf/28.pdf"><b>Bottleneck Paths and Trees and Deterministic Graphical Games</b></a>, 
+STACS '16.<br>
+
+<br>
+
+<a href="https://sites.google.com/site/amirabboud/">A. Abboud</a>, 
+<a href="http://www.mit.edu/~backurs/">A. Backurs</a>, 
+<a href="http://cs.au.dk/~tdh/">T. Dueholm Hansen</a>, 
+<a href="http://theory.stanford.edu/~virgi/">V. Vassilevska Williams</a>, 
+O. Zamir,  
+<a href="http://arxiv.org/abs/1510.04622"><b>Subtree Isomorphism Revisited</b></a>, 
+SODA '16 <i>(Invited to special issue)</i>.<br>
+
+<br>
+
+<a href="http://acg.cs.tau.ac.il/people/kirilsol">K. Solovey</a>, 
+<a href="http://people.csail.mit.edu/jingjin">J. Yu</a>, 
+O. Zamir, 
+<a href="http://acg.cs.tau.ac.il/danhalperin/homepage">D. Halperin</a>, 
+<a href="http://arxiv.org/abs/1504.05218"><b>Motion Planning for Unlabeled Discs with Optimality Guarantees</b></a>, 
+RSS '15. <br>
+
+<br>
+
+<a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>, 
+O. Zamir, 
+<a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
+<a href="./pub/FindMin_OrZamir.pdf"><b>The amortized cost of finding the minimum</b></a>, 
+SODA '15. 
+<b>M.Sc Thesis</b><br>
+<br>
+</div>
+</div>
+
+<br>
+</div>
+
+<h4><span id="awards_click" style="cursor: pointer;"><img id="awards_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Awards</span></h4>
+<div id="awards_div" style="display: none;">
+2024:&nbsp;&nbsp;ISF Grant.
+<br><br>
+2023:&nbsp;&nbsp;The Blavatnik Grant.
+<br><br>
+2021:&nbsp;&nbsp;<a href="https://exact-sciences.tau.ac.il/computer-h/blavatnik_prizes21"><b>The Blavatnik Prize</b></a>, Israel.
+<br><br>
+2021:&nbsp;&nbsp;<a href="https://eatcs.org/index.php/best-student-icalp-paper"><b>Best Student Paper</b></a>, ICALP '21.
+<br><br>
+2020:&nbsp;&nbsp; Recipient of <a href="https://www.yadhanadiv.org.il/rothschild-fellows"><b>The Rothschild Fellowship</b></a>.
+<br><br>
+2019:&nbsp;&nbsp;<b>The Deutsch Prize</b>, Tel Aviv University.
+<br><br>
+2016:&nbsp;&nbsp;<b>The Celia and Marcos Maus Annual Prize</b>, Tel Aviv University.
+<br><br>
+2016:&nbsp;&nbsp;Dean's list, Tel Aviv University.
+<br><br>
+2015:&nbsp;&nbsp;The Blavatnik School of Computer Science scholarship for excellence, Tel Aviv University.
+<br><br>
+2015:&nbsp;&nbsp;The "Beno Arbel Program for Gifted Young Students in Mathematics" award for excellent accomplishments.
+<br><br>
+2015:&nbsp;&nbsp;<b>"Final" scholarship</b> for excellent students.
+<br><br>
+2015:&nbsp;&nbsp;Dean's list, Tel Aviv University.
+<br><br>
+2015:&nbsp;&nbsp;<b>Rector's award</b> for excellence, Tel Aviv University.
+<br><br>
+2014:&nbsp;&nbsp;The Blavatnik School of Computer Science award for excellence, Tel Aviv University.
+<br><br>
+2014:&nbsp;&nbsp;Dean's list, Tel Aviv University.
+<br><br>
+2013:&nbsp;&nbsp;<b>Rector's award</b> for excellence, Tel Aviv University.
+<br><br>
+</div>
+<br>
+<h4><span id="cv_click" style="cursor: pointer;"><img id="cv_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> CV</span></h4>
+<div id="cv_div" style="display: none;">
+2023-:&nbsp;&nbsp;<b>Assistant Professor / ``Senior Lecturer"</b>, School of Computer Science, Tel Aviv University.
+<br><br>
+2022-2023:&nbsp;&nbsp;<b>Associate Research Scholar</b>, Department of Computer Science, Princeton University.
+<br><br>
+2022-2023:&nbsp;&nbsp;<b>Visitor</b>, School of Mathematics, Institute for Advanced Study.
+<br><br>
+2022-2023:&nbsp;&nbsp;<b>Visitor</b>, Department of Computer Science, Columbia University.
+<br><br>
+2021-2022:&nbsp;&nbsp;<b>Visitor</b>, Department of Computer Science, Princeton University.
+<br><br>
+2021-2022:&nbsp;&nbsp;<b>Member</b>, School of Mathematics, Institute for Advanced Study.
+<br><br>
+2020-2021:&nbsp;&nbsp;<b>Collaboration Scientist</b>, <a href="https://www.simonsfoundation.org/mathematics-physical-sciences/algorithms-and-geometry/">Algorithms and Geometry</a>, The Simons Foundation.
+<br><br>
+October 2018 - January 2019:&nbsp;&nbsp;<a href="https://barc.ku.dk/news/or-zamir-from-tel-aviv-university-joins-barc-for-4-months/">Visiting BARC</a> in Copenhagen.
+<br><br>
+2016-2019:&nbsp;&nbsp;Serving in the IDF.
+<br><br>
+2016-2020:&nbsp;&nbsp;<b>Computer Science PhD</b>, Tel Aviv University.
+<br><br>
+2013-2016:&nbsp;&nbsp;<b>Computer Science M.Sc</b>, Tel Aviv University. <b>Summa Cum Laude</b> (<b>GPA:</b> <i>100</i> )
+<br><br>
+2012:&nbsp;&nbsp;Joined the Computer Science dept. excellence program, Tel Aviv University.
+<br><br>
+2012-2015:&nbsp;&nbsp;<b>Computer Science and Mathematics B.Sc</b>, Tel Aviv University. <b>Summa Cum Laude</b> (<b>GPA:</b> Mathematics <i>100.00</i>, Computer Science <i>99.46</i> )
+<br><br>
+</div>
+<!--
+<br/>
+<h4>Talks and Seminars</h4>
+<p>
+<a href="https://www.irif.fr/~adiro/filofocs/filofocs2018/index.html">7th FILOFOCS</a>, 04/10/2018, Paris, France.
+<br/><br/>
+<a href="http://conference.iiis.tsinghua.edu.cn/CTW2018/program/">China Theory Week</a>, 17/09/2018, Beijing, China.
+<br/><br/>
+<a href="https://arco.nu/arco_events/24th_arco_at_itu/">24th ARCO at ITU</a>, 29/11/2017, Copenhagen, Denmark.
+<br/><br/>
+<a href="http://people.uniroma2.it/giuseppe.italiano/ads17/">Bertinoro Workshop on Algorithms and Data Structures (ADS17)</a>, 16/6/2017, Bertinoro, Italy.
+<br/><br/>
+<a href="http://www.univ-orleans.fr/lifo/events/STACS2016/program.html">Symposium on Theoretical Aspects of Computer Science (STACS16)</a>, 19/2/2016, Orleans, France.
+<br/><br/>
+<a href="http://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=22736">ACM-SIAM Symposium on Discrete Algorithms (SODA16)</a>, 12/1/2016, Arlington, Virginia, USA.
+<br/><br/>
+<a href="http://algsemtau11.wikidot.com/">Advanced algorithms seminar</a>, 30/11/2015, Tel Aviv University, Israel.
+<br/><br/>
+<a href="http://dicii.uniroma2.it/?L=EN">Algorithms' Seminar</a>, 12/11/2015, University of Rome Tor Vergata, Italy.
+<br/><br/>
+<a href="http://www.diku.dk/english/research/apl-group/eads/upcoming-events/bottleneck_paths_and_trees_and_deterministic_graphical_games/">EADS talk</a>, 18/9/2015, University of Copenhagen, Denmark.
+<br/><br/>
+<a href="http://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=20494">ACM-SIAM Symposium on Discrete Algorithms (SODA15)</a>, 5/1/2015, San Diego, California, USA.
+<br/><br/>
+<a href="http://algsemtau11.wikidot.com/">Advanced algorithms seminar</a>, 1/12/2014, Tel Aviv University, Israel.
+<br/><br/>
+<a href="http://www.graphalgorithms.it/erice2014/">Student Talk, International school on Mathematics "GUIDO STAMPACCHIA"</a>, 13/9/2014, Erice, Sicily.
+<br/>
+-->
+
+<br>
+<h4><span id="teach_click" style="cursor: pointer;"><img id="teach_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Teaching</span></h4>
+<div id="teach_div" style="display: none;">
+2024/25 Spring Semester:&nbsp;&nbsp; Lecturer, <a href="/combinatorial_methods/">"Combinatorial Methods in Algorithms"</a>.
+<br><br>
+2024/25 Fall Semester:&nbsp;&nbsp; Lecturer, "Data Structues".
+<br><br>
+2020:&nbsp;&nbsp; <b>Rector's award</b> for excellence in teaching, Tel Aviv University.
+<br><br>
+2019/20 Spring Semester:&nbsp;&nbsp; Lecturer, "Data Structues".
+<br><br>
+2019/20 Fall Semester:&nbsp;&nbsp; Teaching Assistant, "Data Structues".
+<br>
+<br>
+</div>
+
+<script>
+    const elementNames = ["pubs", "awards", "cv", "teach"];
+	
+    elementNames.forEach(elementName => {
+        const clck = document.getElementById(`${elementName}_click`);
+        const bttn = document.getElementById(`${elementName}_bttn`);
+        const div = document.getElementById(`${elementName}_div`);
+
+        let isOpen = false;
+
+        clck.addEventListener("click", function () {
+            if (isOpen) {
+                div.style.display = "none";
+                bttn.src = "images/down_arrow.png";
+                isOpen = false;
+            } else {
+                div.style.display = "block";
+                bttn.src = "images/up_arrow.png";
+                isOpen = true;
+            }
+        });
+    });
+</script>
+
+<h2></h2>
+		<br>
+		<h6 style="text-align:center;">
+			E-Mail address: 
+			<a href="mailto:orzamir@tauex.tau.ac.il">orzamir@tauex.tau.ac.il</a>
+		</h6>
+
+        </div> 
+    <div class="content_box_bottom"></div>
+<br><br>
+                <div class="elevator">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" height="100px" width="100px">
+                        <path d="M70,47.5H30c-1.4,0-2.5,1.1-2.5,2.5v40c0,1.4,1.1,2.5,2.5,2.5h40c1.4,0,2.5-1.1,2.5-2.5V50C72.5,48.6,71.4,47.5,70,47.5z   M47.5,87.5h-5v-25h5V87.5z M57.5,87.5h-5v-25h5V87.5z M67.5,87.5h-5V60c0-1.4-1.1-2.5-2.5-2.5H40c-1.4,0-2.5,1.1-2.5,2.5v27.5h-5  v-35h35V87.5z"></path>
+                        <path d="M50,42.5c1.4,0,2.5-1.1,2.5-2.5V16l5.7,5.7c0.5,0.5,1.1,0.7,1.8,0.7s1.3-0.2,1.8-0.7c1-1,1-2.6,0-3.5l-10-10  c-1-1-2.6-1-3.5,0l-10,10c-1,1-1,2.6,0,3.5c1,1,2.6,1,3.5,0l5.7-5.7v24C47.5,41.4,48.6,42.5,50,42.5z"></path>
+                    </svg><br>
+                </div>
+
+        <script type="text/javascript">
+            // Simple elevator usage.
+            var elementButton = document.querySelector('.elevator');
+            var elevator = new Elevator({
+                element: elementButton,
+                mainAudio: './music/elevator-music.mp3', // Music from http://www.bensound.com/
+                endAudio:  './music/ding.mp3', // Music from http://www.bensound.com/
+                duration: 8000
+            });
+
+        </script>
+
+<script type="text/javascript">(function () {
+        return window.SIG_EXT = {};
+      })()</script>
+</body></html>
