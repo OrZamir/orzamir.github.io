@@ -1,7 +1,8 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!-- 1. Viewport Tag: Crucial for mobile scaling -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Or Zamir, School of Computer Science, Tel Aviv University.">
 		<meta name="keywords" content="Or Zamir, Tel Aviv University, TAU, IAS, Princeton, Tel Aviv University, Algorithms, Algorithm, Math, Computer Science, Israel, TAU, Zamir, Data Structures">
 		<meta name="author" content="Or Zamir">
@@ -88,11 +89,11 @@ text-align: justify;
 }
 
 .image {
-  //position: absolute;
+  /* position: absolute; */
   top: 0;
   right: 0;
   width: 330px;
-margin-left: 10px;
+  margin-left: 10px;
   height: auto;
   float: right; /* float the image to the right */
 }
@@ -115,7 +116,60 @@ margin-left: 10px;
     margin: auto;
     margin-bottom: 5px;
 }
-		</style>
+
+/* 2. Responsive Styles: Only apply when screen is smaller than 1020px */
+@media screen and (max-width: 1020px) {
+    
+    /* Make the main container flexible */
+    .content_box_top, 
+    .content_box_bottom {
+        width: 96%; /* Use percentage width */
+        background-size: 100% 100%; /* Force background image to scale */
+    }
+
+    .content_box {
+        width: 96%;
+        box-sizing: border-box; /* Ensures padding is included in width calculation */
+        padding: 20px; /* Slightly reduce padding on mobile */
+        background-size: 100% auto; /* Scale background pattern */
+    }
+
+    /* Mobile Layout for Image */
+    .image {
+        float: none; /* Disable floating layout */
+        display: block;
+        margin: 0 auto 20px auto; /* Center image horizontally */
+        max-width: 80%; /* Prevent it from being too wide */
+        width: auto; /* Allow height to adjust automatically */
+    }
+
+    /* Text adjustments for readability */
+    body {
+        font-size: 14px; /* Slightly larger base text */
+        padding: 0;
+    }
+
+    .container {
+        margin-right: 0;
+    }
+    
+    h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    /* Ensure links and interactive elements are easy to tap */
+    h4 span {
+        padding: 5px 0;
+        display: inline-block;
+    }
+}
+</style>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="js/elevator.js"></script>
 		
 <!-- Google tag (gtag.js) -->
@@ -145,7 +199,7 @@ margin-left: 10px;
 
 	<div class="content_box_top"></div>
     	<div class="content_box"><div class="container">
-<div><img src="./images/me.png" class="image"></div>
+<div><img src="./images/me.png" class="image" alt="Or Zamir"></div>
 <div class="inner_container">
 			<h1>Or Zamir</h1>
 			
@@ -157,10 +211,10 @@ margin-left: 10px;
 <h4>About Me</h4>
 <p>
 I am an Assistant Professor ("Senior Lecturer") in the Blavatnik School of Computer Science at <a href="https://en-exact-sciences.tau.ac.il/computer/CSResearchers">Tel Aviv University</a>.
-My fields of interest revolve around algorithms, data structures, combinatorics and graph theory.
+My fields of interest revolve around algorithms, data structures, combinatorics, graph theory, cryptography and foundations of (provable) AI safety.
 <br>
 Before starting my current position, I was a member in the school of Math at the <a href="https://www.ias.edu/scholars/or-zamir">Institute for Advanced Study</a> and an associate research scholar in the computer science deaprtment at <a href="https://www.princeton.edu/">Princeton University</a>.
-Prior to that, I graduated with a PhD from <a href="https://en-exact-sciences.tau.ac.il/computer">Tel Aviv University</a> where I was honored to have <a href="http://www.cs.tau.ac.il/~haimk/">Haim Kaplan</a> and <a href="http://www.math.tau.ac.il/~zwick/">Uri Zwick</a> as my advisors.&nbsp;
+Prior to that, I graduated with a PhD from <a href="https://en-exact-sciences.tau.ac.il/computer">Tel Aviv University</a> where I was privileged to have <a href="http://www.cs.tau.ac.il/~haimk/">Haim Kaplan</a> and <a href="http://www.math.tau.ac.il/~zwick/">Uri Zwick</a> as my advisors.&nbsp;
 
 <br>
 <br>
@@ -168,21 +222,34 @@ Prior to that, I graduated with a PhD from <a href="https://en-exact-sciences.ta
 </br\></p>
 
 <h4>
-<span id="pubs_click"><img id="pubs_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Publications and Papers</span> 
+<span id="pubs_click" style="cursor: pointer;"><img id="pubs_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Publications and Papers</span> 
 	(<a href="https://dblp.org/pid/157/6049.html">dblp</a>, <a href="http://scholar.google.com/citations?user=xiyhJrwAAAAJ">scholar</a>)</h4>
 <div id="pubs_div" style="display: none;">
 
+<a href="https://kal.ai/">A. T. Kalai</a>, 
+<a href="https://www.eecs.mit.edu/people/yael-kalai/">Y. T. Kalai</a>,
+O. Zamir, 
+<a href="https://arxiv.org/abs/2511.09493"><b>Consensus Sampling for Safer Generative AI</b></a>, 2025.<br>
+
+<br>
+
+N. Green-Maimon,
+O. Zamir, 
+<a href="https://arxiv.org/abs/2509.07599"><b>Tight Bounds for Low-Error Frequency Moment Estimation and the Power of Multiple Passes</b></a>, 2025.<br>
+
+<br>
+	
 <a href="http://people.csail.mit.edu/vinodv/">V. Vaikuntanathan</a>,
 O. Zamir, 
 <a href="https://arxiv.org/abs/2502.13065"><b>Improving Algorithmic Efficiency using Cryptography</b></a>, 
-2025.<br>
+SODA '26.<br>
 
 <br>
 	
 <a href="https://www.cs.bgu.ac.il/~klim/">K. Efremenko</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2411.04803"><b>Unbounded Error Correcting Codes</b></a>, 
-2025.<br>
+SODA '26.<br>
 
 <br>
 	
@@ -399,9 +466,13 @@ SODA '15.
 <br>
 </div>
 
-<h4><span id="awards_click"><img id="awards_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Awards</span></h4>
+<h4><span id="awards_click" style="cursor: pointer;"><img id="awards_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Awards</span></h4>
 <div id="awards_div" style="display: none;">
+2025:&nbsp;&nbsp;Selected for the <a href="https://tlvai50.com/"><b>TLV AI50</b></a> list of "50 of the most influential Israeli AI leaders".
+<br><br>
 2024:&nbsp;&nbsp;ISF Grant.
+<br><br>
+2023:&nbsp;&nbsp;Listed in Quanta Magazine's <a href="https://www.quantamagazine.org/the-biggest-discoveries-in-computer-science-in-2023-20231220/"><b>"The Biggest Discoveries in Computer Science in 2023"</b></a>.
 <br><br>
 2023:&nbsp;&nbsp;The Blavatnik Grant.
 <br><br>
@@ -435,7 +506,7 @@ SODA '15.
 <br><br>
 </div>
 <br>
-<h4><span id="cv_click"><img id="cv_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> CV</span></h4>
+<h4><span id="cv_click" style="cursor: pointer;"><img id="cv_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> CV</span></h4>
 <div id="cv_div" style="display: none;">
 2023-:&nbsp;&nbsp;<b>Assistant Professor / ``Senior Lecturer"</b>, School of Computer Science, Tel Aviv University.
 <br><br>
@@ -464,39 +535,12 @@ October 2018 - January 2019:&nbsp;&nbsp;<a href="https://barc.ku.dk/news/or-zami
 2012-2015:&nbsp;&nbsp;<b>Computer Science and Mathematics B.Sc</b>, Tel Aviv University. <b>Summa Cum Laude</b> (<b>GPA:</b> Mathematics <i>100.00</i>, Computer Science <i>99.46</i> )
 <br><br>
 </div>
-<!--
-<br/>
-<h4>Talks and Seminars</h4>
-<p>
-<a href="https://www.irif.fr/~adiro/filofocs/filofocs2018/index.html">7th FILOFOCS</a>, 04/10/2018, Paris, France.
-<br/><br/>
-<a href="http://conference.iiis.tsinghua.edu.cn/CTW2018/program/">China Theory Week</a>, 17/09/2018, Beijing, China.
-<br/><br/>
-<a href="https://arco.nu/arco_events/24th_arco_at_itu/">24th ARCO at ITU</a>, 29/11/2017, Copenhagen, Denmark.
-<br/><br/>
-<a href="http://people.uniroma2.it/giuseppe.italiano/ads17/">Bertinoro Workshop on Algorithms and Data Structures (ADS17)</a>, 16/6/2017, Bertinoro, Italy.
-<br/><br/>
-<a href="http://www.univ-orleans.fr/lifo/events/STACS2016/program.html">Symposium on Theoretical Aspects of Computer Science (STACS16)</a>, 19/2/2016, Orleans, France.
-<br/><br/>
-<a href="http://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=22736">ACM-SIAM Symposium on Discrete Algorithms (SODA16)</a>, 12/1/2016, Arlington, Virginia, USA.
-<br/><br/>
-<a href="http://algsemtau11.wikidot.com/">Advanced algorithms seminar</a>, 30/11/2015, Tel Aviv University, Israel.
-<br/><br/>
-<a href="http://dicii.uniroma2.it/?L=EN">Algorithms' Seminar</a>, 12/11/2015, University of Rome Tor Vergata, Italy.
-<br/><br/>
-<a href="http://www.diku.dk/english/research/apl-group/eads/upcoming-events/bottleneck_paths_and_trees_and_deterministic_graphical_games/">EADS talk</a>, 18/9/2015, University of Copenhagen, Denmark.
-<br/><br/>
-<a href="http://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=20494">ACM-SIAM Symposium on Discrete Algorithms (SODA15)</a>, 5/1/2015, San Diego, California, USA.
-<br/><br/>
-<a href="http://algsemtau11.wikidot.com/">Advanced algorithms seminar</a>, 1/12/2014, Tel Aviv University, Israel.
-<br/><br/>
-<a href="http://www.graphalgorithms.it/erice2014/">Student Talk, International school on Mathematics "GUIDO STAMPACCHIA"</a>, 13/9/2014, Erice, Sicily.
-<br/>
--->
 
 <br>
-<h4><span id="teach_click"><img id="teach_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Teaching</span></h4>
+<h4><span id="teach_click" style="cursor: pointer;"><img id="teach_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Teaching</span></h4>
 <div id="teach_div" style="display: none;">
+2025/26 Fall Semester:&nbsp;&nbsp; Lecturer, "Data Structues".
+<br><br>
 2024/25 Spring Semester:&nbsp;&nbsp; Lecturer, <a href="/combinatorial_methods/">"Combinatorial Methods in Algorithms"</a>.
 <br><br>
 2024/25 Fall Semester:&nbsp;&nbsp; Lecturer, "Data Structues".
