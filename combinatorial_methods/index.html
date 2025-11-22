@@ -1,9 +1,29 @@
 <html><head>
   <title>Combinatorial Methods in Algorithms (TAU CS 0368-424)</title>
+  <!-- 1. Viewport Tag Added Here -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    table { border-collapse: collapse; }
+    body {
+      font-family: sans-serif; /* Optional: Makes it look a bit more modern on mobile */
+      line-height: 1.5;
+      padding: 10px;
+      max-width: 800px; /* Prevents lines from getting too long on big screens */
+      margin: 0 auto; /* Centers content */
+    }
+    table { border-collapse: collapse; width: 100%; }
     td,th { vertical-align: top; text-align: left; padding: 0.5ex 0.5em; }
     .odd { background-color: #dddddd; }
+    
+    /* 2. Mobile-specific adjustments */
+    @media screen and (max-width: 600px) {
+        body {
+            padding: 15px;
+            font-size: 16px; /* Prevents text from being too small */
+        }
+        h1 { font-size: 24px; }
+        h2 { font-size: 20px; }
+        li { margin-bottom: 10px; }
+    }
   </style>
 </head>
 
