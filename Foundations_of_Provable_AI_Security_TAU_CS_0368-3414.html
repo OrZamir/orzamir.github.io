@@ -1,0 +1,159 @@
+<html><head>
+  <title>Foundations of Provable AI Security (TAU CS 0368-3414)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.5;
+      padding: 10px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    table { border-collapse: collapse; width: 100%; }
+    td,th { vertical-align: top; text-align: left; padding: 0.5ex 0.5em; }
+    .odd { background-color: #dddddd; }
+
+    @media screen and (max-width: 600px) {
+        body {
+            padding: 15px;
+            font-size: 16px;
+        }
+        h1 { font-size: 24px; }
+        h2 { font-size: 20px; }
+        li { margin-bottom: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>TAU CS 0368-3414: Foundations of Provable AI Security</h1>
+
+  <h2>Dr. <a href="https://zamir.prof/">Or Zamir</a> &nbsp; &nbsp; &nbsp; Spring 2026</h2>
+
+  <hr>
+
+  <p>Today&rsquo;s AI systems are remarkably capable but often untrustworthy: we don&rsquo;t really know why they make decisions or whether we can rely on them, especially when trained or hosted by others.
+  This seminar will explore emerging works in which ideas from cryptography and complexity theory, where we developed a rich set of tools to argue formally about security, can bring mathematical rigor to AI trust and safety.</p>
+
+  <p>Participating requires a background or feeling of comfort with theoretical computer science (proofs, rather than experiments). Some background in cryptography or machine learning is ideal but not necessary for students who are willing and able to catch up on basic definitions from these fields that will come up.</p>
+
+  <p>The course requirements include reading, understanding, and presenting one paper in class, as well as three short (two-three paragraphs) reflection assignments throughout the semester.</p>
+
+  <p>The seminar will run for 12 weeks. In each week, two students will prepare a pair of related talks (one hour and one hour) on the same paper or on closely related papers. In some weeks, the natural split is between different parts of one paper; in other weeks, the pair should divide a main paper together with one related/background paper.</p>
+
+  <hr>
+
+  <h2>Reference Material</h2>
+  <p>Students do not need to already know all of the machine-learning or cryptography background needed for every topic. However, before picking a topic, it is a good idea to look at the reference material below and make sure you are comfortable catching up on whichever background your topic requires.</p>
+
+
+  <ul>
+    <li><b>Related MIT course:</b> <a href="https://mlcrypto.mit.edu/course/">Cryptography and Machine Learning: Foundations and Frontiers (MIT, Spring 2026)</a>. This is a closely related course currently being taught at MIT, and its schedule and resources give useful context for many of the topics in this seminar.</li>
+    <li><b>ML background:</b> <a href="https://introml.mit.edu/_static/spring24/LectureNotes/6_390_lecture_notes_spring24.pdf">MIT Intro to ML lecture notes</a>.</li>
+    <li><b>Cryptography background:</b> <a href="https://mlcrypto.mit.edu/course/scribe-notes/lec4_scribe.pdf">MIT Crypto × ML scribe notes on cryptography basics</a>.</li>
+  </ul>
+
+  <hr>
+
+
+  <h2>Core Presentation Topics</h2>
+  <ul>
+    <li><b>Topic 1:</b>
+      <b><i>Undetectable Watermarking for Language Models</i></b>.
+      The basic cryptographic notion of watermarking language-model outputs without detectable degradation in quality.
+      <a href="https://arxiv.org/pdf/2306.09194">[Main paper: Undetectable Watermarks for Language Models]</a>
+      <a href="https://arxiv.org/pdf/2301.10226">[Related: A Watermark for Large Language Models]</a>
+      <a href="https://scottaaronson.blog/?p=6823">[Background blog post]</a></li>
+
+    <li><b>Topic 2:</b>
+      <b><i>Robust Watermarking via Pseudorandom Codes</i></b>.
+      How pseudorandom error-correcting codes (PRCs) yield stronger robustness guarantees for watermarking and related tasks.
+      <a href="https://eprint.iacr.org/2024/235">[Main paper: Pseudorandom Error-Correcting Codes]</a>
+      <a href="https://arxiv.org/pdf/2406.02633">[Related: Edit Distance Robust Watermarks via Indexing Pseudorandom Codes]</a>
+      <a href="https://arxiv.org/abs/2512.08918v1">[Further development: Improved Pseudorandom Codes from Permuted Puzzles]</a>
+      Suggested scope: focus mainly on the early sections of the PRCs paper and use the related papers as context or extensions.</li>
+
+    <li><b>Topic 3:</b>
+      <b><i>Undetectable Steganography for Language Models</i></b>.
+      Hiding arbitrary secret payloads inside model outputs, with provable indistinguishability guarantees.
+      <a href="https://openreview.net/pdf?id=fq6aQoMSHz">[Main paper: Undetectable Steganography for Language Models]</a>
+      <a href="https://eprint.iacr.org/2024/235">[Related: steganography section in Pseudorandom Error-Correcting Codes]</a>
+      <a href="https://arxiv.org/abs/2604.04757">[Optional consequences: Chain-of-thought monitoring / agent collusion (first sections only)]</a></li>
+
+    <li><b>Topic 4:</b>
+      <b><i>Verification of PAC Learning</i></b>.
+      Interactive proofs for verifying that a learned hypothesis is approximately correct, sometimes with much less data than learning itself.
+      <a href="https://eccc.weizmann.ac.il/report/2020/058/">[Main paper: Interactive Proofs for Verifying Machine Learning]</a></li>
+
+    <li><b>Topic 5:</b>
+      <b><i>Adversarial Examples and Computational Hardness</i></b>.
+      A theoretical view in which robustness can rely on hardness assumptions.
+      <a href="https://arxiv.org/abs/1905.11564">[Main paper: Adversarially Robust Learning Could Leverage Computational Hardness]</a>
+      <a href="https://people.csail.mit.edu/madry/6.883-Spring18/files/lecture_11.pdf">[Optional background: adversarial examples lecture notes]</a>
+      Suggested split: one talk on the adversarial-examples background and formal setup, one on the computational-hardness construction and implications.</li>
+
+    <li><b>Topic 6:</b>
+      <b><i>Undetectable Backdoors in Machine Learning Models</i></b>.
+      A theoretical framework showing how a malicious trainer can plant a hidden backdoor while remaining computationally indistinguishable from a clean model.
+      <a href="https://arxiv.org/pdf/2204.06974">[Main paper: Planting Undetectable Backdoors in Machine Learning Models]</a>
+      Suggested split: one talk on the black-box signature-based construction, one on the white-box / learning-paradigm-specific construction and implications for robustness.</li>
+
+    <li><b>Topic 7:</b>
+      <b><i>Backdoor Mitigation without Detection</i></b>.
+      How to remove backdoors while avoiding an explicit detection step.
+      <a href="https://arxiv.org/abs/2411.03279">[Main paper: Oblivious Defense in ML Models: Backdoor Removal without Detection]</a></li>
+
+    <li><b>Topic 8:</b>
+      <b><i>Cryptographic Hardness of Learning</i></b>.
+      Showing that some concept classes are PAC learnable in principle but not efficiently learnable under standard cryptographic assumptions.
+      <a href="https://arxiv.org/pdf/2207.14266">[Main paper: Cryptographic Hardness of Learning Halfspaces with Massart Noise]</a>
+      <a href="https://arxiv.org/abs/2005.09595">[Background: Continuous LWE]</a></li>
+
+    <li><b>Topic 9:</b>
+      <b><i>Private Inference / Private Search</i></b>.
+      Cryptographic protocols for querying powerful systems while hiding the user&rsquo;s data or query.
+      <a href="https://eprint.iacr.org/2018/073.pdf">[Main option: GAZELLE: A Low Latency Framework for Secure Neural Network Inference]</a>
+      <a href="https://dl.acm.org/doi/pdf/10.1145/3600006.3613134">[Alternative option: Private Web Search with Tiptoe]</a></li>
+
+    <li><b>Topic 10:</b>
+      <b><i>Model Extraction Attacks as Cryptanalysis</i></b>.
+      Exact or near-exact recovery of model parameters from query access, viewed through a cryptanalytic lens.
+      <a href="https://arxiv.org/abs/2003.04884">[Main option: Cryptanalytic Extraction of Neural Network Models]</a>
+      <a href="https://arxiv.org/abs/2410.05750">[Advanced option: Polynomial Time Cryptanalytic Extraction of Deep Neural Networks in the Hard-Label Setting]</a></li>
+
+    <li><b>Topic 11:</b>
+      <b><i>The Computational Intractability of Filtering for AI Alignment</i></b>.
+      Formal limitations on using external filters or judges to separate safe from unsafe behavior.
+      <a href="https://arxiv.org/abs/2507.07341">[Main paper: On the Impossibility of Separating Intelligence from Judgment: The Computational Intractability of Filtering for AI Alignment]</a>
+      <a href="https://arxiv.org/abs/2510.01529">[Related consequences: Bypassing Prompt Guards in Production with Controlled-Release Prompting]</a></li>
+  </ul>
+
+  The list above contains the core pool of topics. The final 12 seminar slots will be chosen from these topics together with some of the optional topics below, depending on student interest and overlap in preferences.
+
+  <hr>
+
+  <h2>Optional Topics</h2>
+  <ul>
+    <li><b>[Optional Topic A]</b>
+      <b><i>Impossibility of Strong Watermarking</i></b>.
+      A negative-result companion to the watermarking block.
+      <a href="https://arxiv.org/pdf/2311.04378">[Main paper: Watermarks in the Sand: Impossibility of Strong Watermarking for Generative Models]</a>
+      Should be placed after Topics 1-2.</li>
+
+    <li><b>[Optional Topic B]</b>
+      <b><i>Verifying Properties of Distribution Samples</i></b>.
+      A more general verification topic, adjacent to PAC verification but focused on properties of unknown distributions.
+      <a href="https://eccc.weizmann.ac.il/report/2023/161/">[Main paper: Doubly-Efficient Interactive Proofs for Distribution Properties]</a>
+      Should be placed after Topic 4.</li>
+
+    <li><b>[Optional Topic C]</b>
+      <b><i>Models That Prove Their Own Correctness</i></b>.
+      A modern direction connecting learned models with proof generation and per-instance guarantees.
+      <a href="https://arxiv.org/abs/2405.15722">[Main paper: Models That Prove Their Own Correctness]</a>
+      Should be placed after Topic 4 or near the end of the seminar.</li>
+  </ul>
+
+  * Optional topics may or may not be filled by students.
+
+</body></html>
