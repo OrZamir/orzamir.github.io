@@ -200,6 +200,15 @@ text-align: justify;
         display: inline-block;
     }
 }
+
+.publication-filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; padding: 0 0 13px; border-bottom: 1px solid #ddd; }
+.publication-filters button { padding: 6px 10px; border: 1px solid transparent; border-radius: 3px; background: transparent; color: #555; font: inherit; cursor: pointer; }
+.publication-filters button[aria-pressed="true"] { background: #e8e8e8; color: #222; border-color: #ccc; font-weight: bold; }
+.publication-filters button:hover { background: #f0f0f0; }
+.publication { margin: 0 0 19px; }
+.publication[hidden] { display: none; }
+.publication-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (pointer: coarse) { .publication-filters button { min-height: 44px; } }
 </style>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="js/elevator.js"></script>
 		
@@ -264,295 +273,303 @@ My research group is supported by an ERC Starting Grant and grants from the Isra
 <span id="pubs_click" style="cursor: pointer;"><img id="pubs_bttn" src="images/down_arrow.png" height="18px" alt="Show/Hide"> Publications and Papers</span> 
 	(<a href="https://dblp.org/pid/157/6049.html">dblp</a>, <a href="https://scholar.google.com/citations?user=xiyhJrwAAAAJ">scholar</a>)</h4>
 <div id="pubs_div" style="display: none;">
-
+<div class="publication-filters" role="group" aria-label="Publication category">
+        <button type="button" data-category="selected" aria-pressed="true">Selected</button>
+        <button type="button" data-category="all" aria-pressed="false">All</button>
+        <button type="button" data-category="algorithms" aria-pressed="false">Algorithms and Data Structures</button>
+        <button type="button" data-category="security" aria-pressed="false">AI Security &amp; Cryptography</button>
+        <button type="button" data-category="streaming" aria-pressed="false">Streaming &amp; Information Theory</button>
+        <button type="button" data-category="combinatorics" aria-pressed="false">Combinatorics</button>
+      </div>
+<div id="publication-status" role="status" aria-live="polite" class="publication-status"></div>
+<div class="publication" data-categories="streaming" hidden>
 <a href="https://mbraverm.princeton.edu/">M. Braverman</a>,
 O. Zamir,
 <a href="https://arxiv.org/abs/2609.09064"><b>Parity and Pattern Detection in Permutation Streams</b></a>,
-2026.<br>
+2026.
+</div>
 
-<br>
-
+<div class="publication" data-categories="selected algorithms combinatorics">
 O. Zamir,
 <a href="https://arxiv.org/abs/2608.23502"><b>Linear Hashing is Not That Awesome</b></a>,
-2026.<br>
+2026.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 O. Stern,
 O. Zamir,
 <a href="https://arxiv.org/abs/2607.27147"><b>Enumerating Small Cycles</b></a>,
-SODA '27.<br>
+SODA '27.
+</div>
 
-<br>
-
+<div class="publication" data-categories="selected algorithms">
 O. Zamir,
 <a href="https://arxiv.org/abs/2607.25973"><b>k-Coloring is Faster than Computing the Chromatic Number</b></a>,
-2026.<br>
+2026.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 O. Zamir,
 <a href="https://arxiv.org/abs/2607.16390"><b>Locality in Open Addressing Hash Tables</b></a>,
-SODA '27.<br>
+SODA '27.
+</div>
 
-<br>
-
+<div class="publication" data-categories="security" hidden>
 <a href="https://www.bu.edu/cs/profiles/ran-canetti/">R. Canetti</a>,
 <a href="https://simons.berkeley.edu/people/shafi-goldwasser">S. Goldwasser</a>,
 O. Zamir,
 <a href="https://arxiv.org/abs/2606.30423"><b>Proofs of Ownership for Machine Learning Models</b></a>,
-2026.<br>
+2026.
+</div>
 
-<br>
-	
+<div class="publication" data-categories="selected security">
 <a href="http://people.csail.mit.edu/vinodv/">V. Vaikuntanathan</a>,
 O. Zamir, 
 <a href="https://arxiv.org/abs/2604.04757"><b>Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange</b></a>, 
-FOCS '26.<br>
+FOCS '26.
+</div>
 
-<br>
-	
+<div class="publication" data-categories="security" hidden>
 <a href="https://kal.ai/">A. T. Kalai</a>, 
 <a href="https://www.eecs.mit.edu/people/yael-kalai/">Y. T. Kalai</a>,
 O. Zamir, 
-<a href="https://arxiv.org/abs/2511.09493"><b>Consensus Sampling for Safer Generative AI</b></a>, 2026.<br>
+<a href="https://arxiv.org/abs/2511.09493"><b>Consensus Sampling for Safer Generative AI</b></a>, 2026.
+</div>
 
-<br>
-	
+<div class="publication" data-categories="security" hidden>
 O. Zamir, 
 <a href="https://arxiv.org/abs/2602.15756"><b>A Note on Non-Composability of Layerwise Approximate Verification for Neural Inference</b></a>, 
-2026.<br>
+2026.
+</div>
 
-<br>
-	
+<div class="publication" data-categories="streaming" hidden>
 N. Green-Maimon,
 O. Zamir, 
-<a href="https://arxiv.org/abs/2509.07599"><b>Tight Bounds for Low-Error Frequency Moment Estimation and the Power of Multiple Passes</b></a>, ICALP '26.<br>
+<a href="https://arxiv.org/abs/2509.07599"><b>Tight Bounds for Low-Error Frequency Moment Estimation and the Power of Multiple Passes</b></a>, ICALP '26.
+</div>
 
-<br>
-	
+<div class="publication" data-categories="selected algorithms security">
 <a href="http://people.csail.mit.edu/vinodv/">V. Vaikuntanathan</a>,
 O. Zamir, 
 <a href="https://arxiv.org/abs/2502.13065"><b>Improving Algorithmic Efficiency using Cryptography</b></a>, 
-SODA '26.<br>
+SODA '26.
+</div>
 
-<br>
-	
+<div class="publication" data-categories="streaming combinatorics" hidden>
 <a href="https://www.cs.bgu.ac.il/~klim/">K. Efremenko</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2411.04803"><b>Unbounded Error Correcting Codes</b></a>, 
-SODA '26.<br>
+SODA '26.
+</div>
 
-<br>
-	
+<div class="publication" data-categories="selected streaming">
 <a href="https://mbraverm.princeton.edu/">M. Braverman</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2411.02148"><b>Optimality of Frequency Moment Estimation</b></a> <a href="https://www.youtube.com/watch?v=KGhCFce8BS8"><img src="images/video.png" height="20px"></a>, 
-STOC '25.<br>
+STOC '25.
+</div>
 
-<br>
-	
+<div class="publication" data-categories="algorithms combinatorics" hidden>
 <a href="https://www.cs.columbia.edu/~xichen/Welcome.html">X. Chen</a>, 
 <a href="https://www.cs.columbia.edu/~nadimpalli/">S. Nadimpalli</a>,
 <a href="https://twrand.github.io/">T. Randolph</a>, 
 <a href="https://www.cs.columbia.edu/~rocco/">R. A. Servedio</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2401.07242"><b>Testing Sumsets is Hard</b></a>, 
-ESA '25.<br>
-	
-<br>
-	
+ESA '25.
+</div>
+
+<div class="publication" data-categories="combinatorics" hidden>
 <a href="https://www.tau.ac.il/~nogaa/">N. Alon</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2403.16589"><b>Sumsets in the Hypercube</b></a>, 
-SIAM Journal on Discrete Mathematics, 2024.<br>
+SIAM Journal on Discrete Mathematics, 2024.
+</div>
 
-<br>
-
+<div class="publication" data-categories="security" hidden>
 O. Zamir, 
 <a href="https://arxiv.org/abs/2401.10360"><b>Undetectable Steganography for Language Models</b></a> <a href="https://github.com/OrZamir/steg"><img src="images/github-logo.png" height="20px"></a>, 
-Transactions on Machine Learning Research, 2024.<br>
+Transactions on Machine Learning Research, 2024.
+</div>
 
-
-<br>
-
+<div class="publication" data-categories="selected combinatorics">
 <a href="https://www.tau.ac.il/~nogaa/">N. Alon</a>, 
 <a href="https://www.math.ias.edu/~matija.bucic/">M. Bucic</a>, 
 <a href="https://math.mit.edu/~lsauerma/">L. Sauermann</a>, 
 <a href="https://math.mit.edu/directory/profile.html?pid=2452">D. Zakharov</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2309.04460"><b>Essentially tight bounds for rainbow cycles in proper edge-colourings</b></a>, 
-Proceedings of the London Mathematical Society, 2024.<br>
+Proceedings of the London Mathematical Society, 2024.
+</div>
 
-<br>
-
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="https://cs.au.dk/~larsen/">K. G. Larsen</a>, 
 <a href="https://rasmuspagh.net/">R. Pagh</a>, 
+<a href="https://giuper.github.io/">G. Persiano</a>, 
 <a href="https://www.cs.toronto.edu/~toni/">T. Pitassi</a>, 
+<a href="https://sites.google.com/view/kevin-yeo">K. Yeo</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2308.16042"><b>Optimal Non-Adaptive Cell Probe Dictionaries and Hashing</b></a>, 
-ICALP '24.<br>
+ICALP '24.
+</div>
 
-<br>
-
-
+<div class="publication" data-categories="selected security">
 <a href="https://www.cs.columbia.edu/~mchrist/">M. Christ</a>, 
 <a href="https://people.eecs.berkeley.edu/~gunn/">S. Gunn</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2306.09194"><b>Undetectable Watermarks for Language Models</b></a>, 
-COLT '24<br>
+COLT '24
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 O. Zamir, 
 <a href="https://drops.dagstuhl.de/opus/volltexte/2023/18159/"><b>The Wrong Direction of Jensen’s Inequality Is Algorithmically Right</b></a>, 
-ICALP '23.<br>
+ICALP '23.
+</div>
 
-<br>	
-	
+<div class="publication" data-categories="selected algorithms combinatorics">
 O. Zamir, 
 <a href="https://arxiv.org/abs/2211.11737"><b>Algorithmic Applications of Hypergraph and Partition Containers</b></a> <a href="https://www.youtube.com/watch?v=8yhxNb_JC_M"><img src="images/video.png" height="20px"></a>, 
-STOC '23.<br>
+STOC '23.
+</div>
 
-<br>	
-	
+<div class="publication" data-categories="selected security">
 <a href="https://simons.berkeley.edu/people/shafi-goldwasser">S. Goldwasser</a>,
 <a href="https://cs.stanford.edu/~mpkim/">M. P. Kim</a>, 
 <a href="http://people.csail.mit.edu/vinodv/">V. Vaikuntanathan</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2204.06974"><b>Planting Undetectable Backdoors in Machine Learning Models</b></a> <a href="https://www.quantamagazine.org/cryptographers-show-how-to-hide-invisible-backdoors-in-ai-20230302/"><img src="images/quanta.png" height="20px"></a>, 
-FOCS '22.<br>
+FOCS '22.
+</div>
 
-<br>
-
+<div class="publication" data-categories="selected algorithms combinatorics">
 <a href="https://sites.google.com/site/amirabboud/">A. Abboud</a>,
 <a href="https://people.mpi-inf.mpg.de/~kbringma/">K. Bringmann</a>, 
 <a href="https://simons.berkeley.edu/people/seri-khoury">S. Khoury</a>, 
 O. Zamir, 
 <a href="https://arxiv.org/abs/2204.10465"><b>Hardness of Approximation in P via Short Cycle Removal: Cycle Detection, Distance Oracles, and Beyond</b></a> <a href="https://www.youtube.com/watch?v=k1qZR9LGpkE"><img src="images/video.png" height="20px"></a>, 
-STOC '22.<br>
+STOC '22.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 O. Zamir, 
 <a href="https://arxiv.org/abs/2110.03122"><b>Faster algorithm for Unique (k,2)-CSP</b></a>, 
-ESA '22.<br>
+ESA '22.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="https://www.cs.princeton.edu/people/profile/ret">Robert E. Tarjan</a>, 
 <a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>,   
 O. Zamir, 
 <a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
 <a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611977073.76"><b>Simulating a stack using queues</b></a>, 
-SODA '22.<br>
+SODA '22.
+</div>
 
-<br>
-
+<div class="publication" data-categories="streaming" hidden>
 <a href="https://mbraverm.princeton.edu/">M. Braverman</a>, 
 <a href="https://sites.google.com/view/sumegha-garg/home">S. Garg</a>,   
 O. Zamir, 
 <a href="https://eccc.weizmann.ac.il/report/2021/083/"><b>Tight Space Complexity of the Coin Problem</b></a> <a href="https://www.youtube.com/watch?v=Ly5wbHIIqEg"><img src="images/video.png" height="20px"></a>, 
-FOCS '21.<br>
+FOCS '21.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="https://sites.google.com/view/shyamnarayanan/home">S. Narayanan</a>, 
 <a href="https://sandeepsilwal.com/">S. Silwal</a>, 
 <a href="https://people.csail.mit.edu/indyk/">P. Indyk</a>, 
 O. Zamir, 
 <a href="http://proceedings.mlr.press/v139/narayanan21b.html"><b>Randomized Dimensionality Reduction for Facility Location and Single-Linkage Clustering</b></a>, 
-ICML '21.<br>
+ICML '21.
+</div>
 
-<br>
-
+<div class="publication" data-categories="selected algorithms">
 O. Zamir, 
 <a href="https://arxiv.org/pdf/2007.10790.pdf"><b>Breaking the 2^n barrier for 5-coloring and 6-coloring</b></a> <a href="https://www.youtube.com/watch?v=vhZikAlX5s4"><img src="images/video.png" height="20px"></a>, 
-ICALP '21 (<b>Best Student Paper</b>).<br>
+ICALP '21 (<b>Best Student Paper</b>).
+</div>
 
-<br>
-
+<div class="publication" data-categories="selected algorithms streaming combinatorics">
 <a href="http://webhome.cs.uvic.ca/~val/">J. Holm</a>, 
 <a href="https://di.ku.dk/english/staff/?pure=en/persons/42387">V. King</a>, 
 <a href="http://www.diku.dk/~mthorup/">M. Thorup</a>, 
 O. Zamir, 
 <a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
 <a href="https://conferences.computer.org/focs/2019/pdfs/FOCS2019-7pBwCpNH4Mz2L4MJWVl6Xp/5YciFJZv1uWPQreke8IdY6/7EsiyFwTBFtlkBB1AtzN3S.pdf"><b>Random k-out subgraph leaves only (n/k) inter-component edges</b></a> <a href="https://www.youtube.com/watch?v=nmR_Dx564F0"><img src="images/video.png" height="20px"></a>, 
-FOCS '19.<br>
+FOCS '19.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="http://www.diku.dk/~mthorup/">M. Thorup</a>, 
 O. Zamir, 
 <a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
 <a href="https://drops.dagstuhl.de/opus/volltexte/2019/10671/"><b>Dynamic Ordered Sets with Approximate Queries, Approximate Heaps and Soft Heaps</b></a>, 
-ICALP '19.<br>
+ICALP '19.
+</div>
 
-<br>
-
+<div class="publication" data-categories="selected algorithms">
 <a href="http://cs.au.dk/~tdh/">T. Dueholm Hansen</a>, 
 <a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>,   
 O. Zamir, 
 <a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
 <a href="https://dl.acm.org/citation.cfm?id=3316359"><b>Faster k-SAT algorithms using biased-PPSZ</b></a>, 
-STOC '19.<br>
+STOC '19.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>,   
 O. Zamir, 
 <a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
 <a href="https://epubs.siam.org/doi/pdf/10.1137/1.9781611975482.79"><b>A sort of an adversary</b></a>, 
-SODA '19.<br>
+SODA '19.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>, 
 <a href="http://www.lkozma.net/">L. Kozma</a>,  
 O. Zamir, 
 <a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
 <a href="https://arxiv.org/pdf/1802.07041.pdf"><b>Selection from heaps, row-sorted matrices and X+Y using soft heaps</b></a>, 
-SOSA '19.<br>
+SOSA '19.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="http://www.cs.tau.ac.il/~schechik/">S. Chechik</a>, 
 <a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>, 
 <a href="http://www.diku.dk/~mthorup/">M. Thorup</a>, 
 O. Zamir, 
 <a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
 <a href="http://drops.dagstuhl.de/opus/volltexte/2016/5728/pdf/28.pdf"><b>Bottleneck Paths and Trees and Deterministic Graphical Games</b></a>, 
-STACS '16.<br>
+STACS '16.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="https://sites.google.com/site/amirabboud/">A. Abboud</a>, 
 <a href="http://www.mit.edu/~backurs/">A. Backurs</a>, 
 <a href="http://cs.au.dk/~tdh/">T. Dueholm Hansen</a>, 
 <a href="http://theory.stanford.edu/~virgi/">V. Vassilevska Williams</a>, 
 O. Zamir,  
 <a href="http://arxiv.org/abs/1510.04622"><b>Subtree Isomorphism Revisited</b></a>, 
-SODA '16 <i>(Invited to special issue)</i>.<br>
+SODA '16 <i>(Invited to special issue)</i>.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="http://acg.cs.tau.ac.il/people/kirilsol">K. Solovey</a>, 
 <a href="http://people.csail.mit.edu/jingjin">J. Yu</a>, 
 O. Zamir, 
 <a href="http://acg.cs.tau.ac.il/danhalperin/homepage">D. Halperin</a>, 
 <a href="http://arxiv.org/abs/1504.05218"><b>Motion Planning for Unlabeled Discs with Optimality Guarantees</b></a>, 
-RSS '15. <br>
+RSS '15.
+</div>
 
-<br>
-
+<div class="publication" data-categories="algorithms" hidden>
 <a href="http://www.cs.tau.ac.il/~haimk/">H. Kaplan</a>, 
 O. Zamir, 
 <a href="http://www.math.tau.ac.il/~zwick/">U. Zwick</a>, 
 <a href="./pub/FindMin_OrZamir.pdf"><b>The amortized cost of finding the minimum</b></a>, 
 SODA '15. 
-<b>M.Sc Thesis</b><br>
-<br>
+<b>M.Sc Thesis</b>
+</div>
 </div>
 </div>
 
@@ -721,4 +738,23 @@ October 2018 - January 2019:&nbsp;&nbsp;<a href="https://barc.ku.dk/news/or-zami
 <script type="text/javascript">(function () {
         return window.SIG_EXT = {};
       })()</script>
+
+<script>
+(() => {
+    const root = document.getElementById('pubs_div');
+    const buttons = root.querySelectorAll('[data-category]');
+    const papers = root.querySelectorAll('.publication');
+    function filter(category) {
+        let count = 0;
+        buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
+        papers.forEach(paper => {
+            paper.hidden = category !== 'all' && !paper.dataset.categories.split(' ').includes(category);
+            if (!paper.hidden) count++;
+        });
+        document.getElementById('publication-status').textContent = count + ' papers shown';
+    }
+    buttons.forEach(button => button.addEventListener('click', () => filter(button.dataset.category)));
+    filter('selected');
+})();
+</script>
 </body></html>
